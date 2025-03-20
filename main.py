@@ -96,13 +96,15 @@ class Firework:
         self.explosion_sound_play.set_volume(1)
         self.explosion_sound_play.play()
 
+    global color
+    
+
     def create_particles(self):
         for _ in range(random.randint(50, 100)):  # 50 particles per firework
             angle = random.uniform(0, 2 * math.pi)
             speed = random.uniform(2, 6)
             dx = math.cos(angle) * speed
             dy = math.sin(angle) * speed
-            color = random.choice(COLORS)
             self.particles.append([self.x, self.y, dx, dy, color, 100])  # (x, y, dx, dy, color, lifespan)
 
     def update(self):
@@ -128,6 +130,7 @@ fireworks = []
 clock = pygame.time.Clock()
 
 while running:
+    color = random.choice(COLORS)
     screen.fill((0, 0, 0))  # Clear screen
     
     for event in pygame.event.get():
