@@ -121,7 +121,7 @@ class Firework:
         if self.flash > 0:
             pygame.draw.circle(screen, (255, 255, 255), (int(self.x), int(self.y)), 10)  # Flash effect
         for particle in self.particles:
-            pygame.draw.circle(screen, particle[4], (int(particle[0]), int(particle[1])), max(1, particle[5] // 20))
+            pygame.draw.circle(screen, particle[4], (int(particle[0]), int(particle[1])), max(1, particle[5] // 100))
 
 # Main loop
 running = True
